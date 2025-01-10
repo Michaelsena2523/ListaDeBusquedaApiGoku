@@ -1,8 +1,7 @@
 import { useState } from "react";
 import AddCategory from "./compenents/AddCategory";
 import { ImgGrid } from "./compenents/ImgGrid";
-
-
+// import {AddCategory , ImgGrid} from "./compenents"; 👈 Aqui traemos los componente de la carpecta compenent
 
 const alertaExiste = ( ) => {
   Swal.fire({
@@ -14,7 +13,7 @@ const alertaExiste = ( ) => {
 
 export default function AppGoku() {
   // el que matiene el 👇 estado  y hace el cambio del estado
-  const [category, setCategory] = useState([]);
+  const [category, setCategory] = useState(["Goku"]);
 
   //Aqui recubimos el string nuevo  👇  del inputValue
   const onAddcategory = (onNewCategory) => {
