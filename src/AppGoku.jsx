@@ -3,22 +3,35 @@ import AddCategory from "./compenents/AddCategory";
 import { ImgGrid } from "./compenents/ImgGrid";
 
 
+
+const alertaExiste = ( ) => {
+  Swal.fire({
+    title: "Oops...",
+    text: "YA Existe",
+  });
+}
+
+
 export default function AppGoku() {
   // el que matiene el 👇 estado  y hace el cambio del estado
-  const [category, setCategory] = useState(["goku"]);
+  const [category, setCategory] = useState([]);
 
   //Aqui recubimos el string nuevo  👇  del inputValue
   const onAddcategory = (onNewCategory) => {
     //Aqui me valida 👇 si existe nombre en listado newcategory con el metodo include()
-    if (category.includes(onNewCategory)) return;
-    // los tres punto trae todo del array list
-    setCategory([ ...category ,  onNewCategory]);
-    //Aqui llamamos lista 👆     y   👆 insertamos inputValue otro text a lista
+    if (category.includes(onNewCategory)){
+      alertaExiste()
+    }else{
+      // los tres punto trae todo del array list
+      setCategory([  onNewCategory  ,  ...category ]);
+      //insertamos inputValue 👆     👆  Aqui llamamos lista 
+      // otro text a lista
+    };
   };
 
   return (
     <>
-      <h2>AppGoku</h2>
+      <h2>Busca Tu Personaje Saiyajin</h2>
 
       <AddCategory
         /* setCategory={setCategory} */

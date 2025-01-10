@@ -18,11 +18,15 @@ export const ImgGrid = ({ ValoreArregloCategory }) => {
 
   return (
     <>
-      <h3>{ValoreArregloCategory}</h3>
+      <h3 className="tituloPersonaje">{ValoreArregloCategory}</h3>
       <div className="card-grid">
          {
-          images.map(({id, raza}) => (
-            <ImgItem />
+          images.map((item) => (
+            <ImgItem 
+             key={item.id}
+             {... item}
+
+            />
           ))
          }
       </div>

@@ -11,7 +11,6 @@ const getPersonaje = async (ValoreArregloCategory) => {
         power: infop.ki,
         poweMax: infop.maxKi,
     }));
-    console.log(getInfop)
     return getInfop;
 };
 
